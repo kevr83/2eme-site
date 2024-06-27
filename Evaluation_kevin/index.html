@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mon évaluation en HTLM5 et CSS3">
+    <meta name="author" content="Kévin">
+    <meta name="copyright" content="Kévin">
+    <meta name="robots" content="index, follow">
+    <!-- Meta -->
+
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/image.jpg" type="image/x-icon">
+    <!-- Favicon -->
+    
+    
+    <!-- Css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Css -->
+    
+
+    <title>Mon évaluation</title>
+
+</head>
+
+<body>
+    
+    <!-- Mon entête -->
+    <header>
+        <h1>Bienvenue sur mon évaluation en HTLM5 et CSS3</h1>
+        <button onclick="getLocation()">Obtenir ma position</button> <!-- Bouton pour obtenir la position géographique -->
+        <p id="geoLocation"></p> <!-- Emplacement pour afficher la position -->
+    </header>
+    <!-- Mon entête -->
+
+    
+    <!-- Mes balises de navigation -->
+    <nav>
+        <a href="#images">Images</a>
+        <a href="#audio">Audio</a>
+        <a href="#video">Vidéo</a>
+        <a href="maposition">Position</a>
+    </nav>
+    <!-- Mes balises de navigation -->
+
+
+    <main>
+
+        <!-- Mes champs de saisis -->
+        <form>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" required><br><br>
+
+            
+            <label for="email">Adresse mail: </label>
+            <input type="email" id="email" required><br><br>
+
+
+            <label for="message">Message :</label>
+            <textarea id="message" rows="4" required></textarea><br><br>
+
+            <input type="submit" value="Envoyer mon message">
+
+        </form>   
+        <!-- Mes champs de saisis -->
+        
+        
+        <!-- Section pour ma vidéo -->
+        <section id="video">
+            <h2>Ma vidéo</h2>
+            <video controls>
+            <source src="video/video.mp4" type="video/mp4">
+        </section>
+        <!-- Section pour ma vidéo -->
+        
+        
+        <!-- Section pour mon audio -->
+        <section id="audio">
+            <h2>Mon audio</h2>
+            <audio controls>
+                    <source src="audio/audio.mp3" type="audio/ogg">
+                    <source src="audio/audio.mp3" type="audio/wav">
+                    <source src="audio/audio.mp3" type="audio/mpeg">
+        </section>            
+        <!-- Section pour mon audio -->
+
+
+
+
+        <!-- Section pour mes images -->
+        <section id="images">
+            <h2>Mes images</h2>
+            <img src="images/image_1.jpg" onclick="openModal('images/image1.jpg')" alt="Image 1">
+            <img src="images/image_2.jpg" onclick="openModal('images/image2.jpg')" alt="Image 2">
+            <img src="images/image_3.jpg" onclick="openModal('images/image3.jpg')" alt="Image 3">
+            <img src="images/image_4.jpg" onclick="openModal('images/image4.jpg')" alt="Image 4">
+            <img src="images/image_5.jpg" onclick="openModal('images/image5.jpg')" alt="Image 5">
+            <img src="images/image_6.jpg" onclick="openModal('images/image6.jpg')" alt="Image 6">
+            <img src="images/image_7.jpg" onclick="openModal('images/image7.jpg')" alt="Image 7">
+            <img src="images/image_8.jpg" onclick="openModal('images/image8.jpg')" alt="Image 8">
+            <img src="images/image_9.jpg" onclick="openModal('images/image9.jpg')" alt="Image 9">
+            <img src="images/image_10.jpg" onclick="openModal('images/image10.jpg')" alt="Image 10">
+            <img src="images/image_11.jpg" onclick="openModal('images/image11.jpg')" alt="Image 11">
+            <img src="images/image_12.jpg" onclick="openModal('images/image12.jpg')" alt="Image 12">
+            <!-- Ajouter d'autres images ici. -->
+         </section>
+        <!-- Section pour mes images -->
+
+        
+        
+        
+        
+        <!-- Section pour ma position -->
+        <section>
+            <h2>Ma position</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2892.904725597181!2d6.457688476625175!3d43.52517946070089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ceac7a8af8465d%3A0x14df09a82f6f34e9!2sBd%20Saint-Exup%C3%A9ry%2C%2083300%20Draguignan!5e0!3m2!1sen!2sfr!4v1718027458402!5m2!1sen!2sfr" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ma position"></iframe>
+        </section>
+        <!-- Section pour ma position -->
+
+
+
+
+
+        
+        
+        
+</main> 
+    
+
+    
+
+    
+<footer>
+        <p>@ Mon évaluation en HTML5 et CSS3</p>
+        <p>Rodriguez Kévin 2024</p>
+    </footer>
+
+    
+
+    
+    <script>
+        // Déclaration d'un objet pour stocker des messages d'erreur constants pour faciliter 
+        // la maintenance et la localisation.
+        const messages = {
+            unsupported: "La géolocalisation n'est pas supportée par ce navigateur.",
+            denied: "L'utilisateur a refusé la demande de géolocalisation.",
+            unavailable: "Les informations de localisation ne sont pas disponibles.",
+            timeout: "La demande pour obtenir la localisation de l'utilisateur a expiré.",
+            unknownError: "Une erreur inconnue est survenue."
+        };
+    
+        // Déclaration d'une variable pour suivre l'état d'affichage des coordonnées géographiques
+        let isDisplayed = false;
+    
+        // Fonction pour mettre à jour le contenu de l'élément HTML 'geoLocation' avec un texte spécifique
+        function updateGeoLocation(content) {
+            document.getElementById("geoLocation").innerHTML = content;
+        }
+    
+        // Fonction principale appelée lors du clic sur le bouton pour obtenir ou masquer la position géographique
+        function getLocation() {
+            if (isDisplayed) {
+                // Cache les informations de géolocalisation si elles sont déjà affichées
+                updateGeoLocation('');
+                isDisplayed = false;
+            } else {
+                if (navigator.geolocation) {
+                    // Définit les options de géolocalisation si le navigateur supporte cette fonctionnalité
+                    const options = {
+                        enableHighAccuracy: true, // Demande une précision élevée pour la localisation
+                        timeout: 5000, // Limite le temps d'attente de la réponse à 5000 ms
+                        maximumAge: 0 // Exige des données de localisation les plus récentes possibles
+                    };
+                    navigator.geolocation.getCurrentPosition(showPosition, showError, options);
+                } else {
+                    // Affiche un message d'erreur si la géolocalisation n'est pas supportée
+                    updateGeoLocation(messages.unsupported);
+                }
+            }
+        }
+    
+        // Fonction de rappel (callback) exécutée en cas de succès de la requête de géolocalisation
+        function showPosition(position) {
+            const lat = position.coords.latitude; // Récupère la latitude
+            const lon = position.coords.longitude; // Récupère la longitude
+            // Affiche les coordonnées de latitude et de longitude dans l'élément 'geoLocation'
+            updateGeoLocation(`Latitude : ${lat}<br>Longitude : ${lon}`);
+            isDisplayed = true; // Indique que les informations sont maintenant affichées
+        }
+    
+        // Fonction de rappel (callback) pour gérer les erreurs lors de la requête de géolocalisation
+        function showError(error) {
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    // Affiche un message si l'utilisateur refuse la géolocalisation
+                    updateGeoLocation(messages.denied);
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    // Affiche un message si la position est indisponible
+                    updateGeoLocation(messages.unavailable);
+                    break;
+                case error.TIMEOUT:
+                    // Affiche un message si la requête de localisation dépasse le délai imparti
+                    updateGeoLocation(messages.timeout);
+                    break;
+                default:
+                    // Affiche un message pour toute autre erreur non spécifiée
+                    updateGeoLocation(messages.unknownError);
+            }
+            isDisplayed = false; // Réinitialise l'indicateur d'affichage en cas d'erreur
+        }
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght400;700&display=swap');
+
+/* Style général de la page */
+body{
+
+    /* Famille de police d'écriture général de la page */
+    font-family: 'Roboto', sans-serif;
+    /* Supprimer les marges par défaut */
+    margin: 0;
+    /* Supprimer les marges intérieur par défaut */
+    padding: 0;
+    /* Mettre une couleur de fond de ma page en dégradé */
+    background: linear-gradient(135deg, #48b9d0, #2507ea);
+    /* Couleur du texte en gris foncé */
+    color: #333;
+    /* Utilisation du modèle flexbox */
+    display: flex;
+    /* Direction des éléments en colonne */
+    flex-direction: column;
+    /* Hauteur minimale de 100% de la haiteur de la fenêtre */
+    min-height: 100vh;
+    /* Centrage du texte */
+    text-align: center;
+    
+}
+/* Style général de la page */
+
+
+/* Styles pour l'en-tête de la page */
+
+header{
+
+    /* Fond semi-transparent pour l'en-tête de la page */
+    background-color: rgba(34, 182, 208, 0.9);
+    /* Espacement interne de 20px */
+    padding: 20px;
+    /* Ombre portée en bas de l'en-tête */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Animation de fondu descendant */
+    animation: fadeInDown 2s ease-in-out;
+
+}
+
+
+header h1{
+
+    /* Supprimer les marges par défaut */
+    margin: 0;
+    /* Taille de police d'écriture à 2.4em */
+    font-size: 2.4em;
+    /* Couleur du texte couleur gris foncé */
+    color: #2507ea;
+    /* Animation de fondu descendant */
+    animation: fadeInDown 2s ease-in-out;
+    /* Ombre portée pour le texte */
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+    /* Mettre le texte en gras */
+    font-weight: bolder;
+    /* Padding */
+    padding: 9px;
+
+}
+/* Styles pour l'en-tête de la page */
+
+
+/* Styles général pour la barre de navigation */
+
+nav{
+
+   /* Fond semi-transparent pour la barre de navigation */
+   background-color: rgba(255, 255, 255, 0.5);
+   /* Espacement intérieur de 15px */
+   padding: 15px 0;
+   /* Ombre portée en bas de la barre de navigation */
+   box-shadow: rgba(0, 0, 0, 0.9);
+   /* Position collante pour que la barre de navigation reste en haut lors du défilement de la page */
+   position: sticky;
+   /* Positionnement en haut pour la barre de navigation */
+   top: 0;
+   /* Index de superposition élevé */
+   z-index: 1000;
+}
+
+nav a{
+
+    /* Marge horizontale de 15px */
+    margin: 0 15px;
+    /* Supprimer les soulignements des liens */
+    text-decoration: none;
+    /* Couleur du texte */
+    color: #fff;
+    /* Taille des textes de liens à 1.2em */
+    font-size: 1.8em;
+    /* Texte en gras */
+    font-weight: bold;
+    /* Transition pour la couleur des textes de liens et la transformation */
+    transition: color 0.6s ease, transform 0.6s ease;
+    /* Ombre */
+    text-shadow: 2px 2px 4px #2507ea;
+    /* Mettre le texte en gras */
+    font-weight: bolder;
+}
+
+nav a:hover{
+    color: rgb(215, 248, 2);
+    /* Légère translation vers le haut au survol */
+    transform: translateY(-2px);
+    /* Ombre */
+    text-shadow: 2px 2px 4px #2507ea;
+    /* Mettre le texte en gras */
+    font-weight: bolder;
+    
+}
+/* Styles général pour la barre de navigation */
+
+
+/* Styles pour les sections */
+
+section{
+
+    /* Espacement interne de 80px en haut et 20px sur les côtés */
+    padding: 100x 20px 80px;
+    /* Animation de fondu montant */
+    animation: fadeInUp 3s ease-in-out;
+    /* Espacement en bas de chacune des section de 20px */
+    margin-bottom: 20px;
+    /* Mettre une couleur de fond à chacune des sections */
+    background: rgba(255, 255, 255, 0.7);
+    /* Arrondir les bords de 10px */
+    border-radius: 10px;
+    /* Ombre portée */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Marge en haut */
+    margin-top: 20px;
+    /* Justifier les éléments */
+    justify-content: center;
+    
+    
+}
+
+section h2{
+    /* Couleurs du texte */
+    color: darkorchid;
+    /* Taille de la police */
+    font-size: 50px;
+    /* Mettre le texte en gras */
+    font-weight: bold;
+    /* Animation de fondu descendant */
+    animation: fadeInDown 2s ease-in-out;
+    /* Ombre portée pour le texte */
+    text-shadow: 5px 5px 5px #fff;
+   
+    
+    
+    
+}
+
+/* Styles pour les sections */
+
+
+
+/* Styles pour le pied de page */
+
+footer{
+
+    /* Couleur de fond semi-transparente pour le pied de page */
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Espacement interne de 10px */
+    padding: 10px;
+    /* Ombre portée en haut du pied de page */
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    /* Marge automatique en haut pour pousser le pied de page en bas de la page */
+    margin-top: auto;
+    /* Mettre le texte en gras */
+    font-weight: bolder;
+    /* Animation de fondu */
+    animation: fadeIn 2s ease-in-out;
+    
+}
+
+footer p{
+
+    /* Supprimer les marges par défaut */
+    margin: 0;
+    /* Taille de la police d'écriture à 1.5em*/
+    font-size: 1.5em;
+    /* Couleur du texte en gris foncé */
+    color: #333;
+    /* Animation de fondu */
+    animation: fadeIn 4s ease-in-out;
+}
+/* Styles pour le pied de page */
+
+
+
+/* Mise en place des animations de ma page */
+
+@keyframes fadeInDown {
+
+    from{
+        /* Départ de l'animation avec une opacité de 0 (texte non visible)*/
+        opacity: 0;
+        /* Départ de l'animation avec une translation de 50px vers le bas */
+        transform: translateY(-50px);
+    }
+    to{
+        /* Fin de l'animation avec une opacité de 1 (texte visible) */
+        opacity: 1;
+        /* Fin de l'animation sans translation */
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp{
+
+    from{
+        /* Départ de l'animation avec une opacité de 0 (texte non visible)*/
+        opacity: 0;
+        /* Départ de l'animation avec une translation de 50px vers le bas */
+        transform: translateY(50px);
+    }
+    to{
+        /* Fin de l'animation avec une opacité de 1 (texte visible) */
+        opacity: 1;
+        /* Fin de l'animation sans translation */
+        transform: translateY(0);
+    }
+
+
+}
+
+
+@keyframes fadeIn{
+
+    from{
+        /* Départ de l'animation avec une opacité de 0 (non visble) */
+        opacity: 0;
+    }
+    to{
+        /* Fin de l'animation avec une opacité de 1 (visible) */
+        opacity: 1;
+    }
+}
+
+
+/* Styles pour les labels du formulaire */
+
+label{
+    /* Affichage des labels sous forme de blocs */
+    display: block;
+    /* Mettre une marge autour des labels */
+    margin: 10px 0 5px;
+    /* Mettre les textes label en gras */
+    font-weight: bold;
+    /* Couleur des textes label */
+    color: #2507ea;
+    font-size: 20px;
+    color: rgb(47, 212, 230);
+    /* Légère translation vers le haut au survol */
+    transform: translateY(-2px);
+    /* Ombre */
+    text-shadow: 4px 4px 7px #2507ea;
+    /* Mettre le texte en gras */
+    font-weight: bolder;
+}
+
+/* Styles des champs de saisis */
+input[type="text"],
+input[type="email"],
+textarea{
+    /* Largeur des champs de saisis pour compenser  les padding */
+    width: calc(20% - 20px);
+    /* Espacement interne de 10px */
+    padding: 15px;
+    /* Marge inférieure de 10px */
+    margin-bottom: 10px;
+    /* Suppression des bordures par défaut */
+    border: 5px;
+    /* Bords des champs arrondis de 5px */
+    border-radius: 10px;
+    /* Ombre portée légère */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    /* Transition pour l'ombre portée */
+    transition: box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus{
+    /* Ombre */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Enlever les lignes */
+    outline: none;
+}
+/* Styles des champs de saisis */
+
+
+/* Style pour le bouton de soumission */
+input[type="submit"]{
+    /* Largeur */
+    width: 100%;
+    /* Ajouter du padding */
+    padding: 10px;
+    /* Enlever les bordures */
+    border: none;
+    /* Border radius */
+    border-radius: 5px;
+    /* Couleur du background */
+    background: #1212c1e2;
+    /* Couleur */
+    color: #fff;
+    /* Taille de la police */
+    font-size: 1.2em;
+    /* Curseur */
+    cursor: pointer;
+    /* Ajouter box shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Transition */
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    /* Largeur de police */
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    /* Background color */
+    background: #02f2ff;
+    /* Ombre box */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour le bouton de soumission */
+    
+
+
+
+
+
+
+
+
+
+
+/* Mise en place des animations de ma page */
